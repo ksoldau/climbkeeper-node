@@ -1,6 +1,7 @@
 type Query {
   climbs(filter: String): [Climb!]!
   climb(id: ID!): Climb
+  user: User
 }
 
 type Mutation {
