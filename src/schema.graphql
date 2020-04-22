@@ -1,5 +1,4 @@
 type Query {
-  info: String!
   climbs(filter: String): [Climb!]!
   climb(id: ID!): Climb
 }
