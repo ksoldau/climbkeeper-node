@@ -1,0 +1,36 @@
+type Query {
+  info: String!
+  climbs(filter: String): [Climb!]!
+  climb(id: ID!): Climb
+}
+
+type Mutation {
+  post(grade: String!, tickType: String!): Climb!
+  updateClimb(id: ID!, grade: String!, tickType: String!): Climb
+  deleteClimb(id: ID!): Climb
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
+}
+
+type Subscription {
+  newClimb: Climb
+}
+
+type Climb {
+  id: ID!
+  grade: String!
+  tickType: String!
+  postedBy: User
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  climbs: [Climb!]!
+}

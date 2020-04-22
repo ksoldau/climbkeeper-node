@@ -1,0 +1,15 @@
+type Climb {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  grade: String!
+  tickType: String!
+  postedBy: User
+}
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  climbs: [Climb!]!
+}
