@@ -32,5 +32,5 @@ type User {
   id: ID!
   name: String!
   email: String!
-  climbs: [Climb!]!
+  climbs(filter: String): [Climb!]!
 }
