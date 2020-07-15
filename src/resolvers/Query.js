@@ -19,13 +19,13 @@ async function climbs(parent, args, context, info) {
 
 async function climb(parent, args, context, info) {
   const climbs = await context.prisma.climbs();
-  return climbs.find(user => user.id === args.id);
+  return climbs.find((user) => user.id === args.id);
 }
 
 async function user(parent, args, context, info) {
   const userId = getUserId(context);
   const users = await context.prisma.users();
-  return users.find(user => user.id === userId);
+  return users.find((user) => user.id === userId);
 }
 
 module.exports = {
