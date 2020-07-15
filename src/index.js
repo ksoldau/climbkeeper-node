@@ -1,3 +1,6 @@
+// NOTE: Following this tutorial
+// https://www.howtographql.com/graphql-js/6-authentication/
+
 const { GraphQLServer } = require("graphql-yoga");
 const { prisma } = require("./generated/prisma-client");
 const Query = require("./resolvers/Query");
