@@ -10,6 +10,7 @@ async function climbs(parent, args, context) {
 
   const climbs = await context.prisma.user({ id: parent.id }).climbs({
     where,
+    orderBy: args.orderBy,
   });
 
   return climbs;

@@ -32,5 +32,14 @@ type User {
   id: ID!
   name: String!
   email: String!
-  climbs(filter: String): [Climb!]!
+  climbs(filter: String, orderBy: ClimbOrderByInput): [Climb!]!
+}
+
+enum ClimbOrderByInput {
+  tickType_ASC
+  tickType_DESC
+  grade_ASC
+  grade_DESC
+  createdAt_ASC
+  createdAt_DESC
 }
