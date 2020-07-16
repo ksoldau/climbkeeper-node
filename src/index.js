@@ -20,6 +20,9 @@ const resolvers = {
   Query: {
     info: () => `Info`,
     feed: () => climbs,
+    climb: (parent, args) => {
+      return climbs.find((c) => c.id === args.id);
+    },
   },
   Mutation: {
     post: (parent, args) => {

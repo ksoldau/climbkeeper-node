@@ -1,6 +1,7 @@
 type Query {
   info: String!
   feed: [Climb!]!
+  climb(id: ID!): Climb
 }
 
 type Mutation {
