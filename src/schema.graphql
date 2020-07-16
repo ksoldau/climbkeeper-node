@@ -7,6 +7,7 @@ type Query {
 type Mutation {
   post(color: String!, gym: String!, tick: String!): Climb!
   updateClimb(id: ID!, color: String, gym: String, tick: String): Climb
+  deleteClimb(id: ID!): Climb
 }
 
 type Climb {

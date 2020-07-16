@@ -49,6 +49,20 @@ const resolvers = {
 
       return climb;
     },
+    deleteClimb: (parent, args) => {
+      let climbIndex;
+      for (let i = 0; i < climbs.length; i++) {
+        if (climbs[i].id === args.id) {
+          climbIndex = i;
+        }
+      }
+
+      const climb = climbs[climbIndex];
+
+      climbs.splice(climbIndex, 1);
+
+      return climb;
+    },
   },
 };
 
