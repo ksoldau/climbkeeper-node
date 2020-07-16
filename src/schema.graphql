@@ -4,7 +4,7 @@ type Query {
 }
 
 type Mutation {
-  post(color: String!, gym: String!): Climb!
+  post(color: String!, gym: String!, tick: String!): Climb!
 }
 
 type Climb {

@@ -15,16 +15,23 @@ const climbs = [
   },
 ];
 
+let idCount = climbs.length;
 const resolvers = {
   Query: {
     info: () => `Info`,
     feed: () => climbs,
   },
-  Climb: {
-    id: (parent) => parent.id,
-    color: (parent) => parent.color,
-    gym: (parent) => parent.gym,
-    tick: (parent) => parent.tick,
+  Mutation: {
+    post: (parent, args) => {
+      const climb = {
+        id: `climb-${idCount++}`,
+        color: args.color,
+        gym: args.gym,
+        tick: args.tick,
+      };
+      climbs.push(climb);
+      return climb;
+    },
   },
 };
 
