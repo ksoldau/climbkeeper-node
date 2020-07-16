@@ -35,6 +35,20 @@ const resolvers = {
       climbs.push(climb);
       return climb;
     },
+    updateClimb: (parent, args) => {
+      const climb = climbs.find((c) => c.id === args.id);
+      if (args.color) {
+        climb.color = args.color;
+      }
+      if (args.gym) {
+        climb.gym = args.gym;
+      }
+      if (args.tick) {
+        climb.tick = args.tick;
+      }
+
+      return climb;
+    },
   },
 };
 
