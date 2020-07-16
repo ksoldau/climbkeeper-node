@@ -15,20 +15,6 @@ const climbs = [
   },
 ];
 
-const typeDefs = `
-type Query {
-  info: String!
-  feed: [Climb!]!
-}
-
-type Climb {
-  id: ID!
-  color: String!
-  gym: String!
-  tick: String!
-}
-`;
-
 const resolvers = {
   Query: {
     info: () => `Info`,
@@ -43,7 +29,7 @@ const resolvers = {
 };
 
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: "./src/schema.graphql",
   resolvers,
 });
 server.start(() => console.log(`Server is running on http://localhost:4000`));
